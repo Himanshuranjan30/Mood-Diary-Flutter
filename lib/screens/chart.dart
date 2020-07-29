@@ -116,7 +116,7 @@ class _MoodChartState extends State<MoodChart> {
 
   @override
   Widget build(BuildContext context) {
-    List<MoodData> data = Provider.of<MoodCard>(context, listen: false).data;
+    List<MoodData> data = Provider.of<MoodCard>(context, listen: true).data;
     List<charts.Series<MoodData, String>> series = [
       charts.Series(
         id: 'Moods',
