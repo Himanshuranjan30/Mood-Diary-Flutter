@@ -75,14 +75,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     .fromDartColor(Colors.black)
                                                 : charts.ColorUtil.fromDartColor(Colors.white)));
 
-                    return Expanded(
-                      child: MoodDay(
-                          snapshot.data[position]['image'],
-                          snapshot.data[position]['datetime'],
-                          snapshot.data[position]['mood'],
-                          img,
-                          name),
-                    );
+                    return MoodDay(
+                        snapshot.data[position]['image'],
+                        snapshot.data[position]['datetime'],
+                        snapshot.data[position]['mood'],
+                        img,
+                        name);
                   },
                 )
               : Center(

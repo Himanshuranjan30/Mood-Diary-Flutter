@@ -72,23 +72,29 @@ class _MoodDayState extends State<MoodDay> {
               ],
             ),
             Expanded(
-                        child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: widget.a.length ,
-                
-                itemBuilder: (context,index){
-                  return Row(
-                    children: <Widget>[
-                      Image.asset(widget.a[index]),
-                      SizedBox(width:25)
-                    ],
-                  );
-                }),
+                          child: Row(
+                            children: <Widget>[
+                              ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: widget.a.length ,
+                  
+                  itemBuilder: (context,index){
+                    return Row(
+                      children: <Widget>[
+                        Image.asset(widget.a[index]),
+                        SizedBox(width:25)
+                      ],
+                    );
+                  }),
+                            ],
+                          ),
             ),
             
                Expanded(
-                              child: ListView.builder(
+                              child: Row(
+                                children: <Widget>[
+                                  ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: widget.b.length ,
@@ -101,6 +107,8 @@ class _MoodDayState extends State<MoodDay> {
                     ],
                   );
               }),
+                                ],
+                              ),
                ),
           ]),
         ));
