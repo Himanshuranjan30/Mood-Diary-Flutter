@@ -22,9 +22,9 @@ class MoodCard extends ChangeNotifier {
   void add(Activity act) {
     activityimage.add(act.image);
     activityname.add(act.name);
+    notifyListeners();
   }
 
-  notifyListeners();
 
   Future<void> addPlace(
     String datetime,
