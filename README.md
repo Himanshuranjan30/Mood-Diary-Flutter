@@ -1,4 +1,4 @@
-# moodairy
+# Moodairy
 
 A Flutter Project that helps you record your mood based on your activities and is a great management tool for mental well being.
 
