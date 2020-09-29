@@ -9,6 +9,7 @@ class ActivityIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
+      width: 65,
       child: Column(children:<Widget>[Image.asset(image,height: 45,width: 45,),Text(name)],),
       decoration: BoxDecoration(border:Border.all(color: colour),)
     );
