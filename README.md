@@ -1,8 +1,8 @@
-# Moodairy
+# Mood Dairy
 
-A Flutter Project that helps you record your mood based on your activities and is a great management tool for mental well being.
+A Flutter Project that helps you record your mood based on your activities and is a great management tool for mental well being.It can be used as a feedback loop in order to moniter our emotional health and mood swings. it is a valuable resource for anyone looking to regain order or improve their daily lives
 
-## Mood Diary Snapshots
+## Mood Diary Snapshots and examples
 
 Image 1  | Image 2  | Image 3
 :-------:|:--------:|:-------
