@@ -71,6 +71,7 @@ flutter:
     - assets/eat.png
     - assets/date.png
     - assets/clean.png
+    - assets/splash.png
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
