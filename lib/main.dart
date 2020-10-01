@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:moodairy/models/activity.dart';
 import 'package:moodairy/models/moodcard.dart';
 import 'package:moodairy/screens/chart.dart';
 import 'package:moodairy/screens/homepage.dart';
-import 'package:moodairy/screens/start.dart';
+import 'package:moodairy/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: StartPage(),
+      home: SplashScreen(),
       routes: {
 
         '/home_screen':(ctx)=>HomeScreen(),
