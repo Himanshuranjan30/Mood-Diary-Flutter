@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:moodairy/models/activity.dart';
 
@@ -215,3 +216,4 @@ class _StartPageState extends State<StartPage> {
         ));
   }
 }
+
