@@ -141,17 +141,20 @@ class _MoodChartState extends State<MoodChart> {
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
               children: List.generate(
                   6,
-                  (index) => MyMoodCard(Text(
-                        "${index + 1} - ${[
-                          'Angry',
-                          'Happy',
-                          'Sad',
-                          'Surprised',
-                          'Loving',
-                          'Scared'
-                        ][index]}",
-                        textAlign: TextAlign.center,
-                      ))),
+                  (index) => MyMoodCard(
+                        Text(
+                          "${index + 1} - ${[
+                            'Angry',
+                            'Happy',
+                            'Sad',
+                            'Surprised',
+                            'Loving',
+                            'Scared'
+                          ][index]}",
+                          textAlign: TextAlign.center,
+                        ),
+                        direction: 1,
+                      )),
             ),
           ),
           Container(
@@ -231,7 +234,8 @@ class _MoodChartState extends State<MoodChart> {
 
 class MyMoodCard extends StatefulWidget {
   Widget w;
-  MyMoodCard(this.w);
+  int direction; //0 - Left, 1 - Right. By default 0
+  MyMoodCard(this.w, {this.direction = 0});
 
   @override
   _MyMoodCardState createState() => _MyMoodCardState();
@@ -267,7 +271,9 @@ class _MyMoodCardState extends State<MyMoodCard>
         ),
         builder: (context, child) {
           return Transform.translate(
-            offset: Offset(1 - _slideAnimation.value, 0) * -40,
+            offset: Offset(1 - _slideAnimation.value, 0) *
+                (widget.direction == 0 ? -1 : 1) *
+                40,
             child: child,
           );
         });
