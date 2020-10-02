@@ -20,7 +20,6 @@ class _StartPageState extends State<StartPage> {
   String timepicked;
   String datetime;
   int currentindex;
-  int ontapcount = 0;
   List<Mood> moods = [
     Mood('assets/smile.png', 'Happy', false),
     Mood('assets/sad.png', 'Sad', false),
@@ -112,12 +111,10 @@ class _StartPageState extends State<StartPage> {
             SizedBox(height: 40),
             Text('WHAT YOU FEELING NOW?',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                SizedBox(height:6),
-              Text('(Tap to Select and Tap again to deselect!)'),
-            
+            SizedBox(height: 6),
+            Text('(Tap to Select!)'),
             Expanded(
-                            
-                            child: ListView.builder(
+              child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: moods.length,
                   itemBuilder: (context, index) {
@@ -132,22 +129,21 @@ class _StartPageState extends State<StartPage> {
                                     ? Colors.black
                                     : Colors.white),
                             onTap: () => {
-                                  if (ontapcount == 0)
+                                  if (moods[index].iselected)
                                     {
+                                      setState(() {
+                                        moods[index].iselected = false;
+                                      })
+                                    }
+                                  else
+                                    {
+                                      moods.forEach((f) => setState((){f.iselected =false;})),
                                       setState(() {
                                         mood = moods[index].name;
                                         image = moods[index].moodimage;
                                         moods[index].iselected = true;
-                                        ontapcount = ontapcount + 1;
                                         print(mood);
                                       }),
-                                    }
-                                  else if (moods[index].iselected)
-                                    {
-                                      setState(() {
-                                        moods[index].iselected = false;
-                                        ontapcount = 0;
-                                      })
                                     }
                                 }),
                       ],
@@ -157,10 +153,10 @@ class _StartPageState extends State<StartPage> {
             Text('WHAT YOU HAVE BEEN DOING?',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             SizedBox(height: 10),
-            Text('Hold on the activity to select,You can choose multiple',
+            Text('Tap on the activity to select,You can choose multiple',
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal)),
             Expanded(
-                          child: ListView.builder(
+              child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: act.length,
                   itemBuilder: (context, index) {
@@ -175,7 +171,7 @@ class _StartPageState extends State<StartPage> {
                               act[index].selected
                                   ? Colors.black
                                   : Colors.white),
-                          onLongPress: () => {
+                          onTap: () => {
                                 if (act[index].selected)
                                   {
                                     setState(() {
